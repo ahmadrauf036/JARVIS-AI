@@ -15,3 +15,6 @@ JARVIS-AI is a Python-based virtual assistant that automates tasks using voice c
 - SpeechRecognition library
 - pyttsx3 library
 - [Other libraries and dependencies as needed]
+
+
+**Note:** This repository is in the process of completion.
