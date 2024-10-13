@@ -51,7 +51,7 @@ def listen():
             except Exception as e:
                 cont-=1
         if(cont==0):
-            return 1
+            return "-1"
     
 def google_search(srch:str=None):
     if srch!=None:
@@ -181,16 +181,23 @@ def search(doc:Doc):
         speak(f"here's a summary on Topic: {srch} {page.summary[:150]}")
         return 0
     else:
-        return 1
+        speak("heres the result of your search")
+        google_search(srch)
+        return 0
+    return 1
     
     
 if __name__=="__main__":
     while True:
         os.system("cls")
         text=listen()
+        if(text=="-1"):
+            speak("i couldnt understand please repeat")
+            continue
+            
         if text=="stop":
             break
-        if(identify_category(text)):
+        elif(identify_category(text)):
             speak("It seems like your message is a bit unclear. Could you clarify what you're asking or if you need assistance with something specific? I'm here to help!")
         
     
